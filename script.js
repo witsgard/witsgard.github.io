@@ -5,7 +5,7 @@ scene.clearColor = new BABYLON.Color3(0.8, 0.8, 0.8);
 
 const camera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 20, -200), scene);
 camera.cameraDirection = new BABYLON.Vector3(0, -2, 0,);
-const light = new BABYLON.PointLight("light", new BABYLON.Vector3(100, 100, -100), scene);
+const light = new BABYLON.PointLight("light", new BABYLON.Vector3(500, 500, -500), scene);
 
 const sun = BABYLON.Mesh.CreateSphere("sphere", 50.0, 50.0, scene);
 const sunMaterial = new BABYLON.StandardMaterial("material", scene);
@@ -20,8 +20,8 @@ planet.material = planetMaterial;
 let t = 0;
 function renderLoop() {
     scene.render();
-    planet.position.x = Math.sin(t) * 50;
-    planet.position.z = Math.cos(t) * 50;
+    planet.position.x = Math.sin(t) * 50 + 10;
+    planet.position.z = Math.cos(t) * 50 + 10;
     planet.position.y = Math.sin(t) * 20;
     t -= 0.01;
 }
